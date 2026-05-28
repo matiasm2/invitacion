@@ -18,7 +18,7 @@
             padding: 0;
         }
 
-        /* Galería de fotos */
+
         .photo-gallery {
             position: relative;
             width: 100%;
@@ -64,7 +64,7 @@
             z-index: 2;
         }
 
-        /* Header */
+
         .header {
             text-align: center;
             padding: 50px 20px 40px;
@@ -115,7 +115,7 @@
             text-transform: uppercase;
         }
 
-        /* Contador */
+
         .countdown-section {
             background: linear-gradient(135deg, #ffffff 0%, #faf8f6 50%, #e8dff0 100%);
             padding: 40px 20px;
@@ -192,7 +192,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Sección de contenido */
+
         .content-section {
             padding: 35px 20px;
             background: #ffffff;
@@ -249,7 +249,7 @@
             font-size: 1.1em;
         }
 
-        /* Botones */
+
         .button {
             display: inline-block;
             background: linear-gradient(135deg, #8fa67f 0%, #7a8c6b 100%);
@@ -282,7 +282,7 @@
             background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
         }
 
-        /* Ubicación */
+
         .location {
             background: linear-gradient(135deg, #faf8f6 0%, #f5f1eb 100%);
             padding: 22px;
@@ -323,7 +323,7 @@
             border: none;
         }
 
-        /* Dress code */
+
         .dress-code {
             background: linear-gradient(135deg, #faf8f6 0%, #f5f1eb 100%);
             padding: 22px;
@@ -350,7 +350,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Gift section */
+
         .gift-box {
             background: linear-gradient(135deg, #faf8f6 0%, #f5f1eb 100%);
             padding: 25px;
@@ -383,7 +383,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Footer */
+
         .footer {
             text-align: center;
             padding: 30px 20px;
@@ -404,7 +404,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Responsive */
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2em;
@@ -477,4 +477,39 @@
                 font-size: 1.1em;
                 letter-spacing: 1px;
             }
+        }
+
+        #bg-music {
+            display: none;
+        }
+
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(143, 166, 127, 0.9);
+            border: 1px solid #8fa67f;
+            color: #ffffff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            padding: 0;
+            line-height: 1;
+            vertical-align: middle;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        .music-btn:hover {
+            background: rgba(143, 166, 127, 1);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }

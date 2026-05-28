@@ -9,18 +9,20 @@
 </head>
 <body>
     <div class="container">
-        <!-- Galería de fotos -->
         <div class="photo-gallery">
             <img id="mainPhoto" src="images/photos/imagen-20260527-200844.jpeg" alt="Momentos especiales">
         </div>
 
-        <!-- Header -->
+        <audio id="bg-music" preload="metadata" loop>
+            <source src="music/song.mp3" type="audio/mpeg">
+        </audio>
+
         <div class="header">
             <h1>Lili y Mati</h1>
             <p>Nos casamos!</p>
+            <button id="music-toggle" class="music-btn" title="Pausar/Reproducir música">♫</button>
         </div>
 
-        <!-- Contador -->
         <div class="countdown-section">
             <h2>¡Falta poco para el gran día!</h2>
             <div class="countdown">
@@ -47,7 +49,6 @@
             </div>
         </div>
 
-        <!-- Mensaje de bienvenida -->
         <div class="content-section">
             <h2 class="section-title">¡Queremos que celebres con nosotros!</h2>
             <p>Después de todo este tiempo compartiendo momentos juntos, llegó el gran día. Nos encantaría que seas parte de este hermoso día para celebrar nuestro amor.</p>
@@ -55,7 +56,6 @@
             <p><strong>¡Vení y disfrutá bajo el sol con nosotros!</strong></p>
         </div>
 
-        <!-- Ubicación -->
         <div class="content-section">
             <h2 class="section-title">Lugar de la Celebración</h2>
             <div class="location">
@@ -71,7 +71,6 @@
             </div>
         </div>
 
-        <!-- Dress Code -->
         <div class="content-section">
             <h2 class="section-title">Código de Vestimenta</h2>
             <div class="dress-code">
@@ -81,7 +80,6 @@
             </div>
         </div>
 
-        <!-- Restricciones alimenticias -->
         <div class="content-section">
             <h2 class="section-title">Restricciones Alimenticias</h2>
             <p>Queremos que disfrutes plenamente de nuestra celebración. Si tenés alguna restricción dietética o alergia alimentaria, por favor contanos para poder preparar opciones especiales para vos.</p>
@@ -90,7 +88,6 @@
             </a>
         </div>
 
-        <!-- Regalo -->
         <div class="content-section">
             <h2 class="section-title">Regalo</h2>
             <p>Tu presencia es el mejor regalo, pero si querés hacernos alguna otra sorpresa especial, podés transferir al siguiente alias:</p>
@@ -101,7 +98,6 @@
             </div>
         </div>
 
-        <!-- Confirmación de asistencia -->
         <div class="content-section">
             <h2 class="section-title">Confirmación de Asistencia</h2>
             <p>Es muy importante para nosotros saber si vas a poder acompañarnos en este gran día. Por favor, confirmá tu asistencia a través del siguiente formulario.</p>
@@ -111,7 +107,6 @@
             </a>
         </div>
 
-        <!-- Botón de agregar al calendario -->
         <div class="content-section" style="text-align: center;">
             <h2 class="section-title">Agregar a tu Calendario</h2>
             <p>No olvides la fecha. Haz clic aquí para agregar el evento directamente a tu calendario.</p>
@@ -120,7 +115,6 @@
             </button>
         </div>
 
-        <!-- Footer -->
         <div class="footer">
             <p>¡Nos vemos pronto! Lili y Mati</p>
             <p style="margin-top: 10px; font-size: 0.85em;">29 de Noviembre de 2026</p>

@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <audio id="bg-music" preload="metadata" loop>
+        <source src="../music/song.mp3" type="audio/mpeg">
+    </audio>
+
     <header class="site-header">
         <h1>Lili y Mati</h1>
-        <span class="date">29 · 11 · 2026</span>
+        <div class="header-right">
+            <span class="date">29 · 11 · 2026</span>
+            <button id="music-toggle" class="music-btn" title="Pausar/Reproducir música">♫</button>
+        </div>
     </header>
 
     <main>
-        <!-- Sección 1: Bienvenida -->
         <section class="parallax-section" style="background-image: url('../images/photos/imagen-20260527-200844.jpeg');">
             <div class="content-card">
                 <h2>¡Queremos que celebres con nosotros!</h2>
@@ -24,7 +30,6 @@
             </div>
         </section>
 
-        <!-- Sección 2: Contador -->
         <section class="parallax-section" style="background-image: url('../images/photos/imagen-20260527-201024.jpeg');">
             <div class="content-card">
                 <h2>¡Falta poco para el gran día!</h2>
@@ -53,7 +58,6 @@
             </div>
         </section>
 
-        <!-- Sección 3: Ubicación -->
         <section class="parallax-section" style="background-image: url('../images/photos/imagen-20260527-201047.jpeg');">
             <div class="content-card">
                 <h2>Lugar de la Celebración</h2>
@@ -65,7 +69,6 @@
             </div>
         </section>
 
-        <!-- Sección 4: Dress Code -->
         <section class="parallax-section" style="background-image: url('../images/photos/imagen-20260527-201202.jpeg');">
             <div class="content-card">
                 <h2>Código de Vestimenta</h2>
@@ -75,7 +78,6 @@
             </div>
         </section>
 
-        <!-- Sección 5: Restricciones -->
         <section class="parallax-section" style="background-image: url('../images/photos/imagen-20260527-201256.jpeg');">
             <div class="content-card">
                 <h2>Restricciones Alimenticias</h2>
@@ -86,7 +88,6 @@
             </div>
         </section>
 
-        <!-- Sección 6: Regalo -->
         <section class="parallax-section" style="background-image: url('../images/photos/imagen-20260527-201345.jpeg');">
             <div class="content-card">
                 <h2>Regalo</h2>
@@ -96,7 +97,6 @@
             </div>
         </section>
 
-        <!-- Sección 7: Confirmación -->
         <section class="parallax-section" style="background-image: url('../images/photos/imagen-20260527-201359.jpeg');">
             <div class="content-card">
                 <h2>Confirmación de Asistencia</h2>
@@ -108,7 +108,6 @@
             </div>
         </section>
 
-        <!-- Sección 8: Footer -->
         <section class="parallax-section footer">
             <div class="content-card footer-card">
                 <p>¡Nos vemos pronto!</p>

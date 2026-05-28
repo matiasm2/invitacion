@@ -57,3 +57,37 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+const audio = document.getElementById('bg-music');
+
+audio.volume = 0.3;
+audio.play().catch(() => {
+    console.log('Autoplay prevented, waiting for user interaction');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('music-toggle');
+    if (button) {
+        button.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                button.textContent = '⏸';
+            } else {
+                audio.pause();
+                button.textContent = '♫';
+            }
+        });
+
+        audio.addEventListener('play', function() {
+            button.textContent = '⏸';
+        });
+
+        audio.addEventListener('pause', function() {
+            button.textContent = '♫';
+        });
+
+        if (!audio.paused) {
+            button.textContent = '⏸';
+        }
+    }
+});
