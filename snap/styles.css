@@ -1,0 +1,199 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.snap-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.snap-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.snap-section.content {
+    background: #ffffff;
+    padding: 60px 20px 20px;
+    overflow-y: auto;
+}
+
+.snap-section.photo {
+    position: relative;
+    background: #3a3530;
+}
+
+.snap-section.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%) brightness(1.15) contrast(1.05) sepia(0.08);
+}
+
+.snap-section.photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 60%, rgba(0, 0, 0, 0.15) 100%);
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e0d4e8;
+    font-family: 'Cinzel', serif;
+    box-sizing: border-box;
+}
+
+.site-header h1 {
+    font-family: 'Tangerine', cursive;
+    font-size: 2.2em;
+    color: #2a2a2a;
+    margin: 0;
+    font-weight: 700;
+}
+
+.site-header .date {
+    font-size: 0.85em;
+    color: #5a5a5a;
+    letter-spacing: 2px;
+}
+
+.content-wrapper {
+    max-width: 100%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.content-wrapper h2 {
+    font-family: 'Cinzel', serif;
+    color: #2a2a2a;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.content-wrapper p {
+    color: #2a2a2a;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content-wrapper .button {
+    display: inline-block;
+    background: linear-gradient(135deg, #8fa67f 0%, #7a8c6b 100%);
+    color: #ffffff;
+    padding: 13px 32px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 5px 10px 0;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 12px rgba(143, 166, 127, 0.25);
+    letter-spacing: 0.5px;
+}
+
+.content-wrapper .button:hover {
+    background: linear-gradient(135deg, #7a8c6b 0%, #6a7c5b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(143, 166, 127, 0.35);
+}
+
+.countdown-snap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item-snap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-item-snap .number {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.8em;
+    font-weight: 400;
+    display: block;
+    line-height: 1;
+    min-width: 50px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.countdown-item-snap .label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65em;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    text-align: center;
+    min-width: 50px;
+}
+
+.date-time-snap {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.95em;
+    margin-top: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.highlight {
+    color: #8fa67f;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 10px 15px;
+    }
+
+    .site-header h1 {
+        font-size: 1.8em;
+    }
+
+    .site-header .date {
+        font-size: 0.75em;
+    }
+
+    .snap-section.content {
+        padding: 55px 15px 20px;
+    }
+}

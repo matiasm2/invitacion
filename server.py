@@ -10,7 +10,8 @@ os.chdir(Path(__file__).parent)
 class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate')
-        self.send_header('Content-Type', 'text/html; charset=utf-8')
+        if self.path.endswith('.html') or self.path == '/':
+            self.send_header('Content-Type', 'text/html; charset=utf-8')
         return super().end_headers()
 
     def do_GET(self):

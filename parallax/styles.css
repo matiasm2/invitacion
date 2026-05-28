@@ -1,0 +1,253 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e0d4e8;
+    font-family: 'Cinzel', serif;
+    box-sizing: border-box;
+}
+
+.site-header h1 {
+    font-family: 'Tangerine', cursive;
+    font-size: 2.2em;
+    color: #2a2a2a;
+    margin: 0;
+    font-weight: 700;
+}
+
+.site-header .date {
+    font-size: 0.85em;
+    color: #5a5a5a;
+    letter-spacing: 2px;
+}
+
+.parallax-section {
+    position: relative;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: inherit;
+    background-size: cover;
+    background-position: inherit;
+    background-attachment: fixed;
+    filter: grayscale(100%) brightness(1.15) contrast(1.05) sepia(0.08);
+    z-index: 0;
+}
+
+.parallax-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, transparent 60%, rgba(0, 0, 0, 0.08) 100%);
+    z-index: 0;
+}
+
+.content-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+    margin: 30px 15px;
+    padding: 30px;
+    border-radius: 4px;
+    max-width: 600px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.content-card h2 {
+    font-family: 'Cinzel', serif;
+    color: #2a2a2a;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.content-card p {
+    color: #2a2a2a;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content-card .button {
+    display: inline-block;
+    background: linear-gradient(135deg, #8fa67f 0%, #7a8c6b 100%);
+    color: #ffffff;
+    padding: 13px 32px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 5px 10px 0;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 12px rgba(143, 166, 127, 0.25);
+    letter-spacing: 0.5px;
+}
+
+.content-card .button:hover {
+    background: linear-gradient(135deg, #7a8c6b 0%, #6a7c5b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(143, 166, 127, 0.35);
+}
+
+.content-card .button-secondary {
+    background: linear-gradient(135deg, #5a5a5a 0%, #3a3a3a 100%);
+}
+
+.content-card .button-secondary:hover {
+    background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+}
+
+.countdown-parallax {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item-parallax {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-item-parallax .number {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.8em;
+    font-weight: 400;
+    display: block;
+    line-height: 1;
+    min-width: 50px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #2a2a2a;
+}
+
+.countdown-item-parallax .label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65em;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    text-align: center;
+    min-width: 50px;
+    color: #2a2a2a;
+}
+
+.date-time-parallax {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.95em;
+    margin-top: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #2a2a2a;
+}
+
+.alias {
+    background: linear-gradient(135deg, #ffffff 0%, #faf8f6 100%);
+    padding: 18px;
+    border-radius: 4px;
+    margin: 15px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #8fa67f;
+    font-family: 'Courier Prime', monospace;
+    border: 2px solid #8fa67f;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.parallax-section.footer {
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    background-attachment: scroll;
+}
+
+.parallax-section.footer::before {
+    background: none;
+}
+
+.content-card.footer-card {
+    background: transparent;
+    box-shadow: none;
+    text-align: center;
+}
+
+.content-card.footer-card p {
+    color: #e8dff0;
+    font-size: 1em;
+}
+
+.content-card.footer-card p:first-child {
+    font-size: 1.2em;
+}
+
+.highlight {
+    color: #8fa67f;
+    font-weight: 600;
+}
+
+@supports (background-attachment: fixed) {
+    @media (hover: none) and (pointer: coarse) {
+        .parallax-section {
+            background-attachment: scroll;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 10px 15px;
+    }
+
+    .site-header h1 {
+        font-size: 1.8em;
+    }
+
+    .site-header .date {
+        font-size: 0.75em;
+    }
+
+    .content-card {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    .parallax-section {
+        padding-top: 50px;
+    }
+}
