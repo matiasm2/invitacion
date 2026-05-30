@@ -8,10 +8,34 @@ parallaxSections.forEach((section, index) => {
     }
 });
 
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-if (isIOS) {
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+if (isMobile) {
+    let ticking = false;
+
+    const updateParallax = () => {
+        parallaxSections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const yOffset = -rect.top * 0.4;
+            section.style.backgroundPosition = `center ${yOffset}px`;
+        });
+        ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }, { passive: true });
+
     parallaxSections.forEach(section => {
         section.style.backgroundAttachment = 'scroll';
+    });
+    updateParallax();
+} else {
+    parallaxSections.forEach(section => {
+        section.style.backgroundAttachment = 'fixed';
     });
 }
 

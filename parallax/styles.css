@@ -255,15 +255,13 @@ html, body {
     font-weight: 600;
 }
 
-@supports (background-attachment: fixed) {
-    @media (hover: none) and (pointer: coarse) {
-        .parallax-section {
-            background-attachment: scroll;
-        }
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+    .parallax-section {
+        background-attachment: scroll;
+    }
 
-        .parallax-section::before {
-            background-attachment: scroll;
-        }
+    .parallax-section::before {
+        background-attachment: scroll;
     }
 }
 
