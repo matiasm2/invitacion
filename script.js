@@ -24,7 +24,7 @@ function rotatePhotos() {
 setInterval(rotatePhotos, 8000);
 
 function updateCountdown() {
-    const weddingDate = new Date('2026-11-29T11:00:00').getTime();
+    const weddingDate = new Date('2026-11-22T12:00:00').getTime();
     const now = new Date().getTime();
     const difference = weddingDate - now;
 
@@ -52,8 +52,8 @@ setInterval(updateCountdown, 1000);
 function downloadCalendarEvent() {
     const event = {
         title: 'Casamiento de Lili y Mati',
-        start: new Date('2026-11-29T11:00:00'),
-        end: new Date('2026-11-29T17:00:00'),
+        start: new Date('2026-11-22T12:00:00'),
+        end: new Date('2026-11-22T17:00:00'),
         description: 'Celebración del casamiento de Lili y Mati\nLugar: 25 de Mayo de 1810 Nro. 1841, Florencio Varela',
         location: '25 de Mayo de 1810 Nro. 1841, Florencio Varela, Buenos Aires'
     };

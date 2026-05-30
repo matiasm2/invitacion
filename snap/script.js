@@ -22,7 +22,7 @@ document.querySelectorAll('.snap-section.photo img').forEach(img => {
 });
 
 function updateCountdown() {
-    const weddingDate = new Date('2026-11-29T11:00:00').getTime();
+    const weddingDate = new Date('2026-11-22T12:00:00').getTime();
     const now = new Date().getTime();
     const difference = weddingDate - now;
 
