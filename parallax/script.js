@@ -1,12 +1,20 @@
 const images = window.getFullImagePaths(true);
 
-function getRandomImage() {
-    return images[Math.floor(Math.random() * images.length)];
+function shuffleArray(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
 }
 
-document.querySelectorAll('.parallax-section').forEach((section, index) => {
-    if (index < document.querySelectorAll('.parallax-section').length - 1) {
-        section.style.backgroundImage = `url('${getRandomImage()}')`;
+const shuffledImages = shuffleArray(images);
+const parallaxSections = document.querySelectorAll('.parallax-section');
+
+parallaxSections.forEach((section, index) => {
+    if (index < parallaxSections.length - 1) {
+        section.style.backgroundImage = `url('${shuffledImages[index % shuffledImages.length]}')`;
     }
 });
 

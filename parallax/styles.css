@@ -260,6 +260,10 @@ html, body {
         .parallax-section {
             background-attachment: scroll;
         }
+
+        .parallax-section::before {
+            background-attachment: scroll;
+        }
     }
 }
 

@@ -1,11 +1,19 @@
 const images = window.getFullImagePaths(true);
 
-function getRandomImage() {
-    return images[Math.floor(Math.random() * images.length)];
+function shuffleArray(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
 }
 
-document.querySelectorAll('.snap-section.photo img').forEach(img => {
-    img.src = getRandomImage();
+const photoElements = document.querySelectorAll('.snap-section.photo img');
+const shuffledImages = shuffleArray(images);
+
+photoElements.forEach((img, index) => {
+    img.src = shuffledImages[index % shuffledImages.length];
 });
 
 function updateCountdown() {
