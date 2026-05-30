@@ -1,18 +1,4 @@
-const images = [
-    'images/photos/aconcagua.jpeg',
-    'images/photos/arraialdocabo.jpeg',
-    'images/photos/bariloche.jpeg',
-    'images/photos/blume.jpeg',
-    'images/photos/casa.jpeg',
-    'images/photos/destello.jpeg',
-    'images/photos/elcalafate.jpeg',
-    'images/photos/iguazu.jpeg',
-    'images/photos/miramar.jpeg',
-    'images/photos/tartagal.jpeg',
-    'images/photos/ushuaia.jpeg',
-    'images/photos/viaje.jpeg'
-];
-
+const images = window.getFullImagePaths();
 let currentImageIndex = 0;
 
 function rotatePhotos() {
@@ -21,10 +7,10 @@ function rotatePhotos() {
     photoElement.src = images[currentImageIndex];
 }
 
-setInterval(rotatePhotos, 8000);
+setInterval(rotatePhotos, window.config.ui.photoRotationInterval);
 
 function updateCountdown() {
-    const weddingDate = new Date('2026-11-22T12:00:00').getTime();
+    const weddingDate = window.getWeddingDateTime();
     const now = new Date().getTime();
     const difference = weddingDate - now;
 
@@ -50,12 +36,13 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 function downloadCalendarEvent() {
+    const cfg = window.config;
     const event = {
-        title: 'Casamiento de Lili y Mati',
-        start: new Date('2026-11-22T12:00:00'),
-        end: new Date('2026-11-22T17:00:00'),
-        description: 'Celebración del casamiento de Lili y Mati\nLugar: 25 de Mayo de 1810 Nro. 1841, Florencio Varela',
-        location: '25 de Mayo de 1810 Nro. 1841, Florencio Varela, Buenos Aires'
+        title: cfg.event.title,
+        start: new Date(`${cfg.event.date}T${cfg.event.time}:00`),
+        end: new Date(`${cfg.event.date}T${cfg.event.endTime}:00`),
+        description: `Celebración del ${cfg.event.title}\nLugar: ${cfg.event.location}`,
+        location: cfg.event.location
     };
 
     const icalContent = `BEGIN:VCALENDAR
@@ -63,10 +50,10 @@ VERSION:2.0
 PRODID:-//Wedding Invitation//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Casamiento Lili y Mati
-X-WR-TIMEZONE:America/Argentina/Buenos_Aires
+X-WR-CALNAME:${cfg.event.title}
+X-WR-TIMEZONE:${cfg.event.timezone}
 BEGIN:VEVENT
-UID:${Date.now()}@lilymatiboda.com
+UID:${Date.now()}@${cfg.event.domainForUID}
 DTSTAMP:${formatIcalDate(new Date())}
 DTSTART:${formatIcalDate(event.start)}
 DTEND:${formatIcalDate(event.end)}
@@ -79,7 +66,7 @@ END:VCALENDAR`;
 
     const element = document.createElement('a');
     element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icalContent));
-    element.setAttribute('download', 'Boda-Lili-Mati.ics');
+    element.setAttribute('download', cfg.event.calendarFilename);
     element.style.display = 'none';
     document.body.appendChild(element);
     element.click();
@@ -92,7 +79,7 @@ function formatIcalDate(date) {
 
 const audio = document.getElementById('bg-music');
 
-audio.volume = 0.3;
+audio.volume = window.config.ui.audioVolume;
 audio.play().catch(() => {
     console.log('Autoplay prevented, waiting for user interaction');
 });
@@ -103,23 +90,23 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             if (audio.paused) {
                 audio.play();
-                button.textContent = '⏸';
+                button.textContent = window.config.ui.musicPauseSymbol;
             } else {
                 audio.pause();
-                button.textContent = '♫';
+                button.textContent = window.config.ui.musicPlaySymbol;
             }
         });
 
         audio.addEventListener('play', function() {
-            button.textContent = '⏸';
+            button.textContent = window.config.ui.musicPauseSymbol;
         });
 
         audio.addEventListener('pause', function() {
-            button.textContent = '♫';
+            button.textContent = window.config.ui.musicPlaySymbol;
         });
 
         if (!audio.paused) {
-            button.textContent = '⏸';
+            button.textContent = window.config.ui.musicPauseSymbol;
         }
     }
 });

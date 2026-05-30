@@ -1,17 +1,4 @@
-const images = [
-    '../images/photos/aconcagua.jpeg',
-    '../images/photos/arraialdocabo.jpeg',
-    '../images/photos/bariloche.jpeg',
-    '../images/photos/blume.jpeg',
-    '../images/photos/casa.jpeg',
-    '../images/photos/destello.jpeg',
-    '../images/photos/elcalafate.jpeg',
-    '../images/photos/iguazu.jpeg',
-    '../images/photos/miramar.jpeg',
-    '../images/photos/tartagal.jpeg',
-    '../images/photos/ushuaia.jpeg',
-    '../images/photos/viaje.jpeg'
-];
+const images = window.getFullImagePaths(true);
 
 function getRandomImage() {
     return images[Math.floor(Math.random() * images.length)];
@@ -31,7 +18,7 @@ if (isIOS) {
 }
 
 function updateCountdown() {
-    const weddingDate = new Date('2026-11-22T12:00:00').getTime();
+    const weddingDate = window.getWeddingDateTime();
     const now = new Date().getTime();
     const difference = weddingDate - now;
 
@@ -53,7 +40,7 @@ setInterval(updateCountdown, 1000);
 
 const audio = document.getElementById('bg-music');
 
-audio.volume = 0.3;
+audio.volume = window.config.ui.audioVolume;
 audio.play().catch(() => {
     console.log('Autoplay prevented, waiting for user interaction');
 });
@@ -64,23 +51,23 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             if (audio.paused) {
                 audio.play();
-                button.textContent = '⏸';
+                button.textContent = window.config.ui.musicPauseSymbol;
             } else {
                 audio.pause();
-                button.textContent = '♫';
+                button.textContent = window.config.ui.musicPlaySymbol;
             }
         });
 
         audio.addEventListener('play', function() {
-            button.textContent = '⏸';
+            button.textContent = window.config.ui.musicPauseSymbol;
         });
 
         audio.addEventListener('pause', function() {
-            button.textContent = '♫';
+            button.textContent = window.config.ui.musicPlaySymbol;
         });
 
         if (!audio.paused) {
-            button.textContent = '⏸';
+            button.textContent = window.config.ui.musicPauseSymbol;
         }
     }
 });
