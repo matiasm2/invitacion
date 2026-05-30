@@ -31,18 +31,3 @@ window.config = {
     musicPauseSymbol: '⏸'
   }
 };
-
-window.getImagePath = function(filename, isSubdir = false) {
-  const base = isSubdir ? '../images/photos/' : 'images/photos/';
-  return base + filename;
-};
-
-window.getFullImagePaths = function(isSubdir = false) {
-  return window.config.images.map(img => window.getImagePath(img, isSubdir));
-};
-
-window.getWeddingDateTime = function() {
-  const date = window.config.event.date;
-  const time = window.config.event.time;
-  return new Date(`${date}T${time}:00`).getTime();
-};
