@@ -88,7 +88,6 @@ html, body {
     background-size: cover;
     background-position: inherit;
     background-attachment: fixed;
-    filter: grayscale(100%) brightness(1.15) contrast(1.05) sepia(0.08);
     z-index: 0;
 }
 

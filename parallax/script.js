@@ -1,23 +1,16 @@
 const images = [
-    '../images/photos/imagen-20260527-200844.jpeg',
-    '../images/photos/imagen-20260527-201024.jpeg',
-    '../images/photos/imagen-20260527-201047.jpeg',
-    '../images/photos/imagen-20260527-201202.jpeg',
-    '../images/photos/imagen-20260527-201256.jpeg',
-    '../images/photos/imagen-20260527-201345.jpeg',
-    '../images/photos/imagen-20260527-201359.jpeg',
-    '../images/photos/imagen-20260527-201523.jpeg',
-    '../images/photos/imagen-20260527-201540.jpeg',
-    '../images/photos/imagen-20260527-201555.jpeg',
-    '../images/photos/imagen-20260527-201636.jpeg',
-    '../images/photos/imagen-20260527-201651.jpeg',
-    '../images/photos/imagen-20260527-201712.jpeg',
-    '../images/photos/imagen-20260527-201736.jpeg',
-    '../images/photos/imagen-20260527-201751.jpeg',
-    '../images/photos/imagen-20260527-201806.jpeg',
-    '../images/photos/imagen-20260527-201921.jpeg',
-    '../images/photos/imagen-20260527-202101.jpeg',
-    '../images/photos/imagen-20260527-202422.jpeg'
+    '../images/photos/aconcagua.jpeg',
+    '../images/photos/arraialdocabo.jpeg',
+    '../images/photos/bariloche.jpeg',
+    '../images/photos/blume.jpeg',
+    '../images/photos/casa.jpeg',
+    '../images/photos/destello.jpeg',
+    '../images/photos/elcalafate.jpeg',
+    '../images/photos/iguazu.jpeg',
+    '../images/photos/miramar.jpeg',
+    '../images/photos/tartagal.jpeg',
+    '../images/photos/ushuaia.jpeg',
+    '../images/photos/viaje.jpeg'
 ];
 
 function getRandomImage() {
