@@ -102,7 +102,7 @@ html, body {
 .content-card {
     position: relative;
     z-index: 1;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(4px);
     margin: 30px 15px;
     padding: 30px;
@@ -213,7 +213,7 @@ html, body {
 }
 
 .alias {
-    background: linear-gradient(135deg, #ffffff 0%, #faf8f6 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(250, 248, 246, 0.55) 100%);
     padding: 18px;
     border-radius: 4px;
     margin: 15px 0;
@@ -227,7 +227,7 @@ html, body {
 }
 
 .parallax-section.footer {
-    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    background: linear-gradient(180deg, #8fa67f 0%, #7a8c6b 100%);
     background-attachment: scroll;
 }
 
