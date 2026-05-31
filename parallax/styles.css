@@ -123,6 +123,18 @@ html, body {
     text-align: center;
 }
 
+.content-card h3 {
+    font-family: 'Cinzel', serif;
+    color: #2a2a2a;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .content-card p {
     color: #2a2a2a;
     margin-bottom: 15px;
@@ -251,7 +263,7 @@ html, body {
 }
 
 .highlight {
-    color: #8fa67f;
+    color: #ccc;
     font-weight: 600;
 }
 
