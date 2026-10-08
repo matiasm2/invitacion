@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a wedding invitation website for Lili and Mati's wedding on November 29, 2026. It's a static site with three distinct presentation variants, all using vanilla HTML/CSS/JavaScript with no build process or dependencies.
+This is a wedding invitation website for Lili and Mati's wedding on November 22, 2026. It's a static site with three distinct presentation variants, all using vanilla HTML/CSS/JavaScript with no build process or dependencies.
 
 ## Running the Project
 
@@ -69,7 +69,7 @@ All versions use the same 19-photo array from `images/photos/`.
 
 ### Interactive Features (All Versions)
 
-- **Countdown Timer**: Updates every second, displays days/hours/minutes/seconds to wedding date (Nov 29, 2026, 11:00 AM)
+- **Countdown Timer**: Updates every second, displays days/hours/minutes/seconds to wedding date (Nov 22, 2026, 12:00 PM)
 - **Calendar Download**: Generates an iCal (.ics) file with event details
 - **External Links**: Google Forms for dietary restrictions and RSVP, Google Maps for location
 - **Bank Transfer Display**: Shows transfer alias (`lili.mati.29`) in a styled box
@@ -91,7 +91,7 @@ All versions use the same 19-photo array from `images/photos/`.
 - Snap: `http://localhost:8000/snap/`
 - Parallax: `http://localhost:8000/parallax/`
 
-**Add or update event details**: The countdown date (Nov 29, 2026, 11:00 AM) is hardcoded in each version's `script.js` file. Update the `weddingDate` in all three locations if needed. Update location/time text in the respective HTML files.
+**Add or update event details**: The countdown date (Nov 22, 2026, 12:00 PM) is hardcoded in each version's `script.js` file. Update the `weddingDate` in all three locations if needed. Update location/time text in the respective HTML files.
 
 **Update the photo gallery**: 
 1. Add new images to `images/photos/`
